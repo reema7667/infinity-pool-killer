@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Reader - RSVP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Speed Reader</h1>
+        <div class="controls">
+            <div class="speed-control">
+                <label for="speedSlider">Speed:</label>
+                <input type="range" id="speedSlider" min="100" max="1000" value="300" step="50">
+                <span class="speed-value"><span id="speedValue">300</span> WPM</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle">Dark Mode</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Panel: Text Input -->
+        <div class="panel">
+            <h2>Paste Your Text</h2>
+            <textarea id="textInput" placeholder="Paste your article, essay, or any text here..."></textarea>
+            <button class="process-btn" id="processBtn">Process Text</button>
+        </div>
+
+        <!-- Middle Panel: Paragraph Selection -->
+        <div class="panel">
+            <h2>Select Paragraph</h2>
+            <div id="paragraphList">
+                <div class="empty-state">Paste text and click "Process Text" to see paragraphs here.</div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Speed Reading Display -->
+        <div class="panel display-panel">
+            <div class="word-display" id="wordDisplay">Ready</div>
+            <div class="playback-controls">
+                <button class="control-btn" id="playBtn" disabled>Play</button>
+                <button class="control-btn" id="pauseBtn" disabled>Pause</button>
+                <button class="control-btn" id="resetBtn" disabled>Reset</button>
+            </div>
+            <div class="progress-info" id="progressInfo">Select a paragraph to begin</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
