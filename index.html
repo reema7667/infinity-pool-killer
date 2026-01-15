@@ -25,11 +25,25 @@
             <h2>Paste Your Text</h2>
             <textarea id="textInput" placeholder="Paste your article, essay, or any text here..."></textarea>
             <button class="process-btn" id="processBtn">Process Text</button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="pdf-upload-section">
+                <h2>Upload PDF</h2>
+                <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+                <button class="upload-btn" id="uploadBtn">Choose PDF File</button>
+                <div id="pdfStatus" class="pdf-status"></div>
+            </div>
         </div>
 
         <!-- Middle Panel: Paragraph Selection -->
         <div class="panel">
-            <h2>Select Paragraph</h2>
+            <div class="panel-header">
+                <h2>Select Paragraph</h2>
+                <button class="read-all-btn" id="readAllBtn" disabled>Read All</button>
+            </div>
             <div id="paragraphList">
                 <div class="empty-state">Paste text and click "Process Text" to see paragraphs here.</div>
             </div>
@@ -47,6 +61,12 @@
         </div>
     </div>
 
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Configure PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
